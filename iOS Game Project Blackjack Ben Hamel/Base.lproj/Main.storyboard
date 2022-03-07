@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Sm-he-efK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Game_Project_Blackjack_Ben_Hamel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auw-cV-RWi">
+                                <rect key="frame" x="107" y="748" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Lmo-yK-q8i"/>
+                                    <constraint firstAttribute="width" constant="200" id="Ur0-eL-bs8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Credits"/>
+                                <connections>
+                                    <segue destination="rOS-x4-Ur2" kind="show" id="Iay-pw-eJp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blackjack Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-0t-IRD">
+                                <rect key="frame" x="98.5" y="108" width="217" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Vaj-yE-iKu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyn-Qr-W7U">
+                                <rect key="frame" x="107" y="450" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AZ1-cL-YsQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="zpT-en-Yk9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                <connections>
+                                    <segue destination="YHk-2o-g0G" kind="show" id="A9w-Qj-bSq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="auw-cV-RWi" secondAttribute="bottom" constant="64" id="8lr-sk-u3A"/>
+                            <constraint firstItem="Abu-0t-IRD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="C88-uN-kQn"/>
+                            <constraint firstItem="lyn-Qr-W7U" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QiG-r9-saZ"/>
+                            <constraint firstItem="Abu-0t-IRD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Tls-Uk-kwD"/>
+                            <constraint firstItem="auw-cV-RWi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y8H-k1-xdH"/>
+                            <constraint firstItem="lyn-Qr-W7U" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kQx-VK-uO8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OiQ-o3-g2b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="fJz-nG-lV7">
+            <objects>
+                <viewController id="YHk-2o-g0G" customClass="GameViewController" customModule="iOS_Game_Project_Blackjack_Ben_Hamel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Anj-Ks-f1v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh9-YN-bRJ">
+                                <rect key="frame" x="107" y="583" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hi4-aA-yrB"/>
+                                    <constraint firstAttribute="width" constant="200" id="zdn-vr-bVQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Hit"/>
+                                <connections>
+                                    <action selector="hitButtonPressed:" destination="YHk-2o-g0G" eventType="touchUpInside" id="BRV-12-78K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spz-zT-HHJ">
+                                <rect key="frame" x="107" y="661" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gd0-mp-ycf"/>
+                                    <constraint firstAttribute="width" constant="200" id="rTq-K8-ab6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Stay"/>
+                                <connections>
+                                    <action selector="stayButtonPressed:" destination="YHk-2o-g0G" eventType="touchUpInside" id="PJu-nx-0ZU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgC-nm-Ha4">
+                                <rect key="frame" x="107" y="741" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wrf-0S-21X"/>
+                                    <constraint firstAttribute="width" constant="200" id="bFT-EB-YPD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Game"/>
+                                <connections>
+                                    <action selector="startGameButtonPressed:" destination="YHk-2o-g0G" eventType="touchUpInside" id="sfc-VH-RsL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3fl-W7-lzg"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="spz-zT-HHJ" firstAttribute="centerX" secondItem="3fl-W7-lzg" secondAttribute="centerX" id="Pea-OK-ZWR"/>
+                            <constraint firstItem="DgC-nm-Ha4" firstAttribute="centerX" secondItem="3fl-W7-lzg" secondAttribute="centerX" id="SJ5-bl-HvU"/>
+                            <constraint firstItem="kh9-YN-bRJ" firstAttribute="centerX" secondItem="3fl-W7-lzg" secondAttribute="centerX" id="n4V-S3-zmg"/>
+                            <constraint firstItem="3fl-W7-lzg" firstAttribute="bottom" secondItem="DgC-nm-Ha4" secondAttribute="bottom" constant="71" id="n79-yO-iZY"/>
+                            <constraint firstItem="DgC-nm-Ha4" firstAttribute="top" secondItem="spz-zT-HHJ" secondAttribute="bottom" constant="30" id="nSj-CA-PRy"/>
+                            <constraint firstItem="spz-zT-HHJ" firstAttribute="top" secondItem="kh9-YN-bRJ" secondAttribute="bottom" constant="28" id="zMY-1b-Kvn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game" id="UiY-IX-mC9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMt-ur-Ac2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830.4347826086957" y="-140.625"/>
+        </scene>
+        <!--Credits-->
+        <scene sceneID="qe6-he-Fd6">
+            <objects>
+                <viewController id="rOS-x4-Ur2" customClass="CreditsViewController" customModule="iOS_Game_Project_Blackjack_Ben_Hamel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RYz-7j-RmI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdE-tv-2b6">
+                                <rect key="frame" x="95" y="164" width="225" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Game Created by: Ben Hamel
+Course: MOBI3001
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I8S-gl-sY6"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Credits" id="Fe2-Dy-7s6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4Y-Qs-hmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828.985507246377" y="517.63392857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0ki-JT-te9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Sm-he-efK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t3t-W8-AeC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f3c-UV-28n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tpa-Iy-6Te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
