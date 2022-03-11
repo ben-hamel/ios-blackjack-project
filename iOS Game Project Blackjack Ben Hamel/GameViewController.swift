@@ -10,7 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     
-    let deck: CardDeck = CardDeck()
+    var deck: CardDeck = CardDeck()
     var playerCards: [PlayingCard] = []
     var houseCards: [PlayingCard] = []
     var playerScore: Int = 0;
@@ -18,65 +18,92 @@ class GameViewController: UIViewController {
     var houseScore: Int = 0;
     var houseCardTally: Int = 0;
     var gameIsWon = false
-//    let deck: CardDeck
-//    var playerCards: [PlayingCard]
+    var playerName = String()
+    var modelController: ModelController!
     
-
+    @IBOutlet weak var hitButton: UIButton!
+    @IBOutlet weak var stayButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var labelPlayerScore: UILabel!
+    @IBOutlet weak var labelHouseScore: UILabel!
+    @IBOutlet weak var labelPlayerCount: UILabel!
+    @IBOutlet weak var labelHouseCount: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        labelPlayerScore.text = String(db.state.score)
+        labelHouseScore.text = String(houseScore)
+        labelPlayerCount.text = String(playerCardTally)
+        labelHouseCount.text = String(houseCardTally)
     }
     
     
     @IBAction func hitButtonPressed(_ sender: UIButton) {
         playerCards.append(deck.drawCard()!)
         playerCardTally = tallyCards(tallyTheseCards: playerCards)
-        if playerCardTally > 21 {
-            print("Bust")
-        }
-        print("Player Tally", playerCardTally)
-//        print("Player",playerCards)
-//        print("house",houseCards)
-//        for card in playerCards{
-//            print(card.cardValue.rawValue)
-//        }
-//        tallyCards()
+        checkWin()
+//        print("Player Tally", playerCardTally)
+//        labelPlayerScore.text = String(playerScore)
         
-//
-        
+        updateScores()
+//        labelHouseScore.text = String(houseScore)
     }
     
     
     
     @IBAction func stayButtonPressed(_ sender: UIButton) {
-//        let msg = "test"
-        
-//        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "Close Alert", style:.destructive, handler: {(alert: UIAlertAction!) in self.resetGame()}))
-//        self.present(alert, animated: true, completion: nil)
-       
-        print("Player Tally", playerCardTally)
-        print("House Tally", houseCardTally)
+        while(gameIsWon == false)
+        {
+            houseCards.append(deck.drawCard()!)
+            houseCardTally = tallyCards(tallyTheseCards: houseCards)
+            if houseCardTally < 21 && houseCardTally >= playerCardTally{
+                db.state.score -= 50
+                if db.state.score < 0 {
+                    db.state.score = 0
+                }
+                updateScores()
+                gameIsWon = true
+                loseMessage(loser: "Player")
+            }
+            
+            else {
+                checkWin()
+            }
+            
+//            else if houseCardTally > 21 {
+//                checkWin()
+//                loseMessage(loser: "Player")
+//            }
+            
+            
+        }
     }
     
     
     @IBAction func startGameButtonPressed(_ sender: UIButton) {
+        
+        hitButton.isHidden = false
+        stayButton.isHidden = false
+        startButton.isHidden = true
+        
         deck.createDeck()
         deck.shuffleDeck()
-//        deck.drawCard()
+        //        deck.drawCard()
         
+        //add card to palyers decks
         playerCards.append(deck.drawCard()!)
         playerCards.append(deck.drawCard()!)
         houseCards.append(deck.drawCard()!)
         houseCards.append(deck.drawCard()!)
         
- 
-        
+        //Tally Card Numbers
         playerCardTally = tallyCards(tallyTheseCards: playerCards)
         houseCardTally = tallyCards(tallyTheseCards: houseCards)
-        print("Start Game - Player Tally", playerCardTally)
-        print("Start Game - House Tally", houseCardTally)
+        updateScores()
+        
+//        print("player name is:",playerName)
     }
     
     func tallyCards(tallyTheseCards: [PlayingCard])-> Int {
@@ -89,12 +116,70 @@ class GameViewController: UIViewController {
         return tally
     }
     
+    func updateScores(){
+        labelPlayerScore.text = String(db.state.score)
+        labelHouseScore.text = String(houseScore)
+        labelPlayerCount.text = String(playerCardTally)
+        labelHouseCount.text = String(houseCardTally)
+    }
+    
+    
+    func checkWin(){
+        if playerCardTally > 21 {
+            var score = db.state.score
+            score -= 50
+            db.state.score = score
+            if score < 0 {
+                db.state.score = 0
+            }
+            updateScores()
+            loseMessage(loser: "Player")
+            
+        }
+        
+        else if houseCardTally > 21 {
+//            loseMessage(loser: "House")
+            gameIsWon = true
+            db.state.score += 50
+            updateScores()
+            
+            loseMessage(loser: "House")
+        }
+    }
+    
+    func loseMessage(loser: String){
+        
+        let msg = "Bust: " + loser
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Close Alert", style:.destructive, handler: {(alert: UIAlertAction!) in self.resetGame()}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func bustgame(){
+        let msg = "Game bust"
+        
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Close Alert", style:.destructive, handler: {(alert: UIAlertAction!) in self.resetGame()}))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     func resetGame() {
-        print("game reset")
+//        print("game reset")
+        deck = CardDeck()
+        playerCards = []
+        houseCards = []
+//        playerScore = 0;
+        playerCardTally = 0;
+        houseScore = 0;
+        houseCardTally = 0;
+        gameIsWon = false
         
+        hitButton.isHidden = true
+        stayButton.isHidden = true
+        startButton.isHidden = false
+        updateScores()
     }
     
-
+    
 }

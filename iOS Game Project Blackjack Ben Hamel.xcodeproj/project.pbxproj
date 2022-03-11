@@ -13,6 +13,8 @@
 		775721DC27D2A54400B02699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775721DA27D2A54400B02699 /* Main.storyboard */; };
 		775721DE27D2A54700B02699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775721DD27D2A54700B02699 /* Assets.xcassets */; };
 		775721E127D2A54700B02699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775721DF27D2A54700B02699 /* LaunchScreen.storyboard */; };
+		77A8B59A27DAC5F300ED17A4 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8B59927DAC5F300ED17A4 /* State.swift */; };
+		77A8B59C27DAC6A400ED17A4 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8B59B27DAC6A400ED17A4 /* ModelController.swift */; };
 		77E085CF27D5390000F58B15 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E085CE27D5390000F58B15 /* Card.swift */; };
 		77E085D127D53A8400F58B15 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E085D027D53A8400F58B15 /* Deck.swift */; };
 		77E085D327D53C6C00F58B15 /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E085D227D53C6C00F58B15 /* DeckOfCards.swift */; };
@@ -29,6 +31,8 @@
 		775721DD27D2A54700B02699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		775721E027D2A54700B02699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		775721E227D2A54700B02699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77A8B59927DAC5F300ED17A4 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		77A8B59B27DAC6A400ED17A4 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		77E085CE27D5390000F58B15 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		77E085D027D53A8400F58B15 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		77E085D227D53C6C00F58B15 /* DeckOfCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				77E085CE27D5390000F58B15 /* Card.swift */,
 				77E085D027D53A8400F58B15 /* Deck.swift */,
 				77E085D227D53C6C00F58B15 /* DeckOfCards.swift */,
+				77A8B59927DAC5F300ED17A4 /* State.swift */,
+				77A8B59B27DAC6A400ED17A4 /* ModelController.swift */,
 			);
 			path = "iOS Game Project Blackjack Ben Hamel";
 			sourceTree = "<group>";
@@ -154,11 +160,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E085D127D53A8400F58B15 /* Deck.swift in Sources */,
+				77A8B59C27DAC6A400ED17A4 /* ModelController.swift in Sources */,
 				77F2A80E27D3C157000DA2BF /* GameViewController.swift in Sources */,
 				77E085CF27D5390000F58B15 /* Card.swift in Sources */,
 				775721D927D2A54400B02699 /* ViewController.swift in Sources */,
 				775721D527D2A54400B02699 /* AppDelegate.swift in Sources */,
 				77E085D327D53C6C00F58B15 /* DeckOfCards.swift in Sources */,
+				77A8B59A27DAC5F300ED17A4 /* State.swift in Sources */,
 				775721D727D2A54400B02699 /* SceneDelegate.swift in Sources */,
 				77F2A81227D3C236000DA2BF /* CreditsViewController.swift in Sources */,
 			);

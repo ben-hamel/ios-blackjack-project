@@ -8,22 +8,19 @@
 import UIKit
 
 class CreditsViewController: UIViewController {
+    
+    var playerName = String()
 
+    @IBOutlet weak var labelPlayerName: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Credits Screen Name:", playerName)
         // Do any additional setup after loading the view.
+        labelPlayerName.text = "Player Name: " + db.state.name
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
